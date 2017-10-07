@@ -64,3 +64,7 @@ fabric.properties
 #laravel ide helper
 .phpstorm.meta.php
 _ide_helper.php
+public/js/*
+public/css/*
+public/fonts/vendor/*
+/public/mix-manifest.json
