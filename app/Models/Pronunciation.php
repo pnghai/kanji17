@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Pronunciation
- * 
+ *
  * @property int $id
  * @property bool $is_kunyomi
  * @property int $character_id
@@ -19,10 +19,16 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $pronunciation_audio_link
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * 
  * @property \App\Models\Character $character
- *
  * @package App\Models
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation whereCharacterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation whereIsKunyomi($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation wherePronunciation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation wherePronunciationAudioLink($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Pronunciation extends Eloquent
 {

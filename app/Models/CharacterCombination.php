@@ -11,18 +11,23 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class CharacterCombination
- * 
+ *
  * @property int $id
  * @property int $character_id
  * @property int $combination_id
  * @property int $custom_order
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * 
  * @property \App\Models\Character $character
  * @property \App\Models\Combination $combination
- *
  * @package App\Models
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereCharacterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereCombinationId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereCustomOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class CharacterCombination extends Eloquent
 {

@@ -11,17 +11,22 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Combination
- * 
+ *
  * @property int $id
  * @property string $content
  * @property string $explanation
  * @property string $example
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * 
  * @property \Illuminate\Database\Eloquent\Collection $characters
- *
  * @package App\Models
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereContent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereExample($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereExplanation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Combination extends Eloquent
 {

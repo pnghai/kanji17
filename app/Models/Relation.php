@@ -11,16 +11,20 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Relation
- * 
+ *
  * @property int $id
  * @property int $source_id
  * @property int $target_id
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * 
  * @property \App\Models\Character $character
- *
  * @package App\Models
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Relation whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Relation whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Relation whereSourceId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Relation whereTargetId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Relation whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Relation extends Eloquent
 {
