@@ -1,0 +1,26 @@
+.kanji {
+  color:#000;
+  &:hover{
+    background: #42A5F5;
+    text-decoration: none;
+    color:#fff;
+  }
+  text-align: center;
+  dt {
+    font-size: 48px;
+  }
+  dd{
+    text-transform: uppercase;
+  }
+}
+.dashboard{
+  .characters {
+    &.bushu {
+      .kanji {
+        display: block;
+        float: left;
+        padding:16px;
+      }
+    }
+  }
+}
