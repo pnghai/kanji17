@@ -15,11 +15,11 @@ class CreateCharactersTable extends Migration
     {
         Schema::create('characters', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('character');
+            $table->string('character')->unique();
             $table->string('han_tu');
             $table->unsignedInteger('stroke_count')->nullable();
             $table->boolean('is_bushu')->default(false);
-            $table->string('stroke_order_link')->nullable();
+            $table->text('stroke_order_link')->nullable();
             $table->timestamps();
         });
     }

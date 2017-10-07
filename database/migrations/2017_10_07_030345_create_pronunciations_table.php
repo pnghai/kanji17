@@ -18,7 +18,7 @@ class CreatePronunciationsTable extends Migration
             $table->boolean('is_kunyomi')->default(false);
             $table->unsignedInteger('character_id');
             $table->string('pronunciation');
-            $table->string('pronunciation_audio_link');
+            $table->text('pronunciation_audio_link');
             $table->timestamps();
         });
     }

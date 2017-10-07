@@ -16,8 +16,8 @@ class CreateCombinationsTable extends Migration
         Schema::create('combinations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('content');
-            $table->string('explanation')->nullable();
-            $table->string('example')->nullable();
+            $table->text('explanation')->nullable();
+            $table->text('example')->nullable();
             $table->timestamps();
         });
     }
