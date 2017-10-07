@@ -25,12 +25,12 @@ mix.autoload({})
     },
   })
   .extract([
-    'select2',
+    //'select2',
     'axios',
     'moment',
     'clipboard',
     'noty',
-    'slick-carousel',
+    //'slick-carousel',
     'pace-progress',
   ])
   .sass('resources/assets/sass/app.scss', 'public/css');
