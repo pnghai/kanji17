@@ -1,15 +1,15 @@
 .kanji {
-  color:#000;
+  color: #000;
   &:hover{
-    background: #42A5F5;
+    background-color: #42A5F5;
     text-decoration: none;
     color:#fff;
   }
   text-align: center;
-  dt {
+  dt,.dt {
     font-size: 48px;
   }
-  dd{
+  dd,.dd{
     text-transform: uppercase;
   }
 }

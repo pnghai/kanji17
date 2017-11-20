@@ -8,6 +8,7 @@
 				<div class="panel-heading">Bộ thủ</div>
 				<div class="panel-body">
 					<div class="pull-right">
+						<a href="{{route('admin.characters.index')}}" class="btn btn-primary"><i class="fa fa-globe" aria-hidden="true"></i> Hán tự 2000</a>
 						<a href="{{route('admin.characters.create')}}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Thêm</a>
 					</div>
 					<div class="clearfix"></div>

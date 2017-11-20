@@ -14,8 +14,8 @@ class AddFkToBookmarksTable extends Migration
     public function up()
     {
         Schema::table('bookmarks', function (Blueprint $table) {
-	        $table->foreign('character_id')->references('id')->on('characters');
-	        $table->foreign('user_id')->references('id')->on('users');
+	        $table->foreign('character_id')->references('id')->on('characters')->onDelete('CASCADE');
+	        $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
         });
     }
 

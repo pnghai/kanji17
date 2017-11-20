@@ -17,13 +17,13 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $target_id
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property \App\Models\Character $character
+ * @property Character $character
  * @package App\Models
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Relation whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Relation whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Relation whereSourceId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Relation whereTargetId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Relation whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Relation whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Relation whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Relation whereSourceId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Relation whereTargetId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Relation whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Relation extends Eloquent
@@ -40,6 +40,6 @@ class Relation extends Eloquent
 
 	public function character()
 	{
-		return $this->belongsTo(\App\Models\Character::class, 'target_id');
+		return $this->belongsTo(Character::class, 'target_id');
 	}
 }

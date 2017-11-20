@@ -17,14 +17,14 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $character_id
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property \App\Models\Character $character
- * @property \App\Models\User $user
+ * @property Character $character
+ * @property User $user
  * @package App\Models
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Bookmark whereCharacterId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Bookmark whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Bookmark whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Bookmark whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Bookmark whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bookmark whereCharacterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bookmark whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bookmark whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bookmark whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Bookmark whereUserId($value)
  * @mixin \Eloquent
  */
 class Bookmark extends Eloquent
@@ -41,11 +41,11 @@ class Bookmark extends Eloquent
 
 	public function character()
 	{
-		return $this->belongsTo(\App\Models\Character::class);
+		return $this->belongsTo(Character::class);
 	}
 
 	public function user()
 	{
-		return $this->belongsTo(\App\Models\User::class);
+		return $this->belongsTo(User::class);
 	}
 }

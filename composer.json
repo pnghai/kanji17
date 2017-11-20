@@ -6,13 +6,17 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "browner12/helpers": "^2.0",
         "doctrine/dbal": "^2.6",
         "fideloper/proxy": "~3.3",
         "graham-campbell/exceptions": "^10.0",
+        "guzzlehttp/guzzle": "^6.3",
         "htmlmin/htmlmin": "^5.0",
         "laravel/framework": "5.5.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
+        "mbilbille/jpnforphp": "^0.7.0",
+        "orangehill/iseed": "^2.5",
         "pda/pheanstalk": "^3.1",
         "predis/predis": "^1.1"
     },

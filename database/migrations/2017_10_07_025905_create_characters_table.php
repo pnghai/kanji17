@@ -16,7 +16,7 @@ class CreateCharactersTable extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->increments('id');
             $table->string('character')->unique();
-            $table->string('han_tu');
+            $table->string('han_tu')->nullable();
             $table->unsignedInteger('stroke_count')->nullable();
             $table->boolean('is_bushu')->default(false);
             $table->text('stroke_order_link')->nullable();

@@ -19,18 +19,13 @@
 					@endif
 					@if (count($characters)>0)
 						<div class="row">
-						@foreach ($characters->chunk(6) as $chunk)
-							@foreach ($chunk as $char)
-							<div class="col-md-2">
+						@foreach ($characters as $char)
+							<div class="col-xs-4 col-sm-3 col-md-2">
 								<a href="{{route('admin.characters.edit',$char->id)}}" class="kanji">
-									<dl>
-										<dt>{{ $char->character }}</dt>
-										<dd>{{ $char->han_tu }}</dd>
-									</dl>
+									<div class="dt">{{ $char->character }}</div>
+									<div class="dd">{{ $char->han_tu }}</div>
 								</a>
 							</div>
-							@endforeach
-							<div class="clearfix hidden-xs"></div>
 						@endforeach
 						</div>
 						{{$characters->links()}}
