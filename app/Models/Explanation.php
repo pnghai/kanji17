@@ -18,14 +18,14 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $character_id
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property \App\Models\Character $character
+ * @property Character $character
  * @package App\Models
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Explanation whereCharacterId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Explanation whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Explanation whereExplanation($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Explanation whereI18nIsoCode($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Explanation whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Explanation whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Explanation whereCharacterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Explanation whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Explanation whereExplanation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Explanation whereI18nIsoCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Explanation whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Explanation whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Explanation extends Eloquent
@@ -42,6 +42,6 @@ class Explanation extends Eloquent
 
 	public function character()
 	{
-		return $this->belongsTo(\App\Models\Character::class);
+		return $this->belongsTo(Character::class);
 	}
 }

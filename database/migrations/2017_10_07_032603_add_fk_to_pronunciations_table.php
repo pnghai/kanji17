@@ -14,7 +14,7 @@ class AddFkToPronunciationsTable extends Migration
     public function up()
     {
         Schema::table('pronunciations', function (Blueprint $table) {
-	        $table->foreign('character_id')->references('id')->on('characters');
+	        $table->foreign('character_id')->references('id')->on('characters')->onDelete('CASCADE');
         });
     }
 

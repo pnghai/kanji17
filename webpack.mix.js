@@ -15,7 +15,9 @@ if (!mix.inProduction()) {
   mix.browserSync(dotenv.APP_URL).sourceMaps();
 }
 
-mix.autoload({})
+mix.autoload({
+  jquery: ['$', 'window.jQuery', 'jQuery', 'window.$'],
+})
   .js('resources/assets/js/app.js', 'public/js')
   .webpackConfig({
     resolve: {
@@ -25,12 +27,12 @@ mix.autoload({})
     },
   })
   .extract([
-    //'select2',
+    'jquery',
+    'bootstrap-sass',
     'axios',
     'moment',
     'clipboard',
     'noty',
-    //'slick-carousel',
     'pace-progress',
   ])
   .sass('resources/assets/sass/app.scss', 'public/css');

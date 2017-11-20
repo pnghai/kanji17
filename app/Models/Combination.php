@@ -20,12 +20,12 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property \Carbon\Carbon $updated_at
  * @property \Illuminate\Database\Eloquent\Collection $characters
  * @package App\Models
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereContent($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereExample($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereExplanation($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Combination whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Combination whereContent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Combination whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Combination whereExample($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Combination whereExplanation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Combination whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Combination whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Combination extends Eloquent
@@ -38,7 +38,7 @@ class Combination extends Eloquent
 
 	public function characters()
 	{
-		return $this->belongsToMany(\App\Models\Character::class)
+		return $this->belongsToMany(Character::class)
 					->withPivot('id', 'custom_order')
 					->withTimestamps();
 	}

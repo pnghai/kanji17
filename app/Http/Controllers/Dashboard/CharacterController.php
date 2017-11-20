@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\Bushu;
 use App\Models\Character;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,8 +21,8 @@ class CharacterController extends Controller
     }
 
     public function bushu(){
-	    $characters = Character::whereIsBushu(true)->get();
-	    return view('dashboard.characters.index',compact('characters'));
+	    $characters = Character::has('bushu')->get()->flatten();
+	    return view('dashboard.characters.bushu',compact('characters'));
     }
     /**
      * Show the form for creating a new resource.
@@ -43,8 +44,10 @@ class CharacterController extends Controller
     {
         $character = new Character;
 	    $character->fill($request->input());
-	    $character->is_bushu = $request->has('is_bushu');
 	    $character->save();
+	    if ($request->has('is_bushu')){
+		    $character->bushu()->save(new Bushu());
+	    }
 	    return redirect()->route('admin.characters.index');
     }
 
@@ -67,8 +70,10 @@ class CharacterController extends Controller
      */
     public function edit($id)
     {
-	    $character = Character::findOrFail($id);
-	    return response()->view('dashboard.characters.edit', compact('character'));
+	    $character = Character::with('bushu')->findOrFail($id);
+	    $previous = Character::where('id','<',$id)->orderByDesc('id')->take(1)->first();
+	    $next = Character::where('id','>',$id)->orderByDesc('id')->take(1)->first();
+	    return response()->view('dashboard.characters.edit', compact('character','previous', 'next'));
     }
 
     /**
@@ -80,9 +85,13 @@ class CharacterController extends Controller
      */
     public function update(Request $request, $id)
     {
-	    $character = Character::findOrFail($id);
+	    $character = Character::with('bushu')->findOrFail($id);
 	    $character->fill($request->input());
-        $character->is_bushu = $request->has('is_bushu');
+	    if ($request->has('is_bushu')){
+		    if (!isset($character->bushu)) {
+			    $character->bushu()->save( new Bushu() );
+		    }
+	    }
 	    $character->save();
 	    return redirect()->route('admin.characters.index');
     }

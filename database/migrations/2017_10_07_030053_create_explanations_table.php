@@ -16,7 +16,7 @@ class CreateExplanationsTable extends Migration
         Schema::create('explanations', function (Blueprint $table) {
             $table->increments('id');
             $table->text('explanation');
-            $table->text('i18n_iso_code');
+            $table->string('i18n_iso_code');
             $table->unsignedInteger('character_id');
             $table->timestamps();
         });

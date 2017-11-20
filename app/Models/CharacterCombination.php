@@ -18,15 +18,15 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $custom_order
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property \App\Models\Character $character
- * @property \App\Models\Combination $combination
+ * @property Character $character
+ * @property Combination $combination
  * @package App\Models
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereCharacterId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereCombinationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereCustomOrder($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CharacterCombination whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CharacterCombination whereCharacterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CharacterCombination whereCombinationId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CharacterCombination whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CharacterCombination whereCustomOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CharacterCombination whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CharacterCombination whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class CharacterCombination extends Eloquent
@@ -47,11 +47,11 @@ class CharacterCombination extends Eloquent
 
 	public function character()
 	{
-		return $this->belongsTo(\App\Models\Character::class);
+		return $this->belongsTo(Character::class);
 	}
 
 	public function combination()
 	{
-		return $this->belongsTo(\App\Models\Combination::class);
+		return $this->belongsTo(Combination::class);
 	}
 }

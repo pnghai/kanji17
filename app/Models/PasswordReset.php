@@ -16,9 +16,9 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $token
  * @property \Carbon\Carbon $created_at
  * @package App\Models
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PasswordReset whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PasswordReset whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PasswordReset whereToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereToken($value)
  * @mixin \Eloquent
  */
 class PasswordReset extends Eloquent

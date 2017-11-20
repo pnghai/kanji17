@@ -19,15 +19,15 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $pronunciation_audio_link
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property \App\Models\Character $character
+ * @property Character $character
  * @package App\Models
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation whereCharacterId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation whereIsKunyomi($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation wherePronunciation($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation wherePronunciationAudioLink($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Pronunciation whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Pronunciation whereCharacterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Pronunciation whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Pronunciation whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Pronunciation whereIsKunyomi($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Pronunciation wherePronunciation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Pronunciation wherePronunciationAudioLink($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Pronunciation whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Pronunciation extends Eloquent
@@ -46,6 +46,6 @@ class Pronunciation extends Eloquent
 
 	public function character()
 	{
-		return $this->belongsTo(\App\Models\Character::class);
+		return $this->belongsTo(Character::class);
 	}
 }
