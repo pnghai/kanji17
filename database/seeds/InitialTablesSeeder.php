@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class BushusSeeder extends Seeder {
+class InitialTablesSeeder extends Seeder {
 	/**
 	 * Run the database seeds.
 	 *
