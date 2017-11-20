@@ -39,4 +39,5 @@ mix.autoload({
 
 if (mix.inProduction()) {
   mix.version();
+  mix.disableNotifications();
 }
