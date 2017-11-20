@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group([
+	'prefix'=>'dashboard',
+	'as'=>'admin.',
+	'namespace'=>'Dashboard',
+],function(){
+	Route::get('characters/bushu','CharacterController@bushu')->name('characters.bushu');
+	Route::resource('characters','CharacterController');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

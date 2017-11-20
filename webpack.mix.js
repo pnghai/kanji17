@@ -1,4 +1,5 @@
-let mix = require('laravel-mix');
+const { mix } = require('laravel-mix');
+const dotenv = require('dotenv').config({ path: '.env' }).parsed;
 
 /*
  |--------------------------------------------------------------------------
@@ -10,6 +11,32 @@ let mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+if (!mix.inProduction()) {
+  mix.browserSync(dotenv.APP_URL).sourceMaps();
+}
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.autoload({
+  jquery: ['$', 'window.jQuery', 'jQuery', 'window.$'],
+})
+  .js('resources/assets/js/app.js', 'public/js')
+  .webpackConfig({
+    resolve: {
+      alias: {
+        pace: 'pace-progress',
+      },
+    },
+  })
+  .extract([
+    'jquery',
+    'bootstrap-sass',
+    'axios',
+    'moment',
+    'clipboard',
+    'noty',
+    'pace-progress',
+  ])
+  .sass('resources/assets/sass/app.scss', 'public/css');
+
+if (mix.inProduction()) {
+  mix.version();
+}
