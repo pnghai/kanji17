@@ -58,7 +58,7 @@
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "php artisan key:generate",
             "php artisan migrate",
-            "npm install",
+            "yarn install",
             "npm run production"
         ],
         "post-create-project-cmd": [
