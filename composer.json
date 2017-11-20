@@ -12,6 +12,7 @@
         "graham-campbell/exceptions": "^10.0",
         "guzzlehttp/guzzle": "^6.3",
         "htmlmin/htmlmin": "^5.0",
+        "itsdamien/laravel-heroku-config-parser": "^1.1",
         "laravel/framework": "5.5.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
